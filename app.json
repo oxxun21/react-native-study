@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "react-native-study",
-    "slug": "react-native-study",
+    "slug": "react-native",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a8903235-0d64-456e-91f4-2e2195efbd2f"
+      }
+    },
+    "owner": "oxxun"
   }
 }
