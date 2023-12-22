@@ -1,33 +1,60 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { Dimensions, ScrollView, StyleSheet, Text, View } from "react-native";
+
+const { width: SCREEN_WIDTH } = Dimensions.get("window");
 
 export default function App() {
   return (
-    // <View style={styles.container}>
-    <View
-      // 이렇게도 가능
-      style={{
-        flex: 1,
-        backgroundColor: "#fff",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <Text style={styles.text}>Hello</Text>
+    <View style={styles.container}>
       <StatusBar style="auto" />
+      <View style={styles.city}>
+        <Text style={styles.cityName}>Seoul</Text>
+      </View>
+      <ScrollView horizontal pagingEnabled showsHorizontalScrollIndicator={false} contentContainerStyle={styles.weather}>
+        <View style={styles.day}>
+          <Text style={styles.temp}>27</Text>
+          <Text style={styles.desc}>Sunny</Text>
+        </View>
+        <View style={styles.day}>
+          <Text style={styles.temp}>27</Text>
+          <Text style={styles.desc}>Sunny</Text>
+        </View>
+        <View style={styles.day}>
+          <Text style={styles.temp}>27</Text>
+          <Text style={styles.desc}>Sunny</Text>
+        </View>
+      </ScrollView>
     </View>
   );
 }
 
-// StyleSheet.create 없어도 작동은 하지만 속성 자동완성이 안됨
 const styles = StyleSheet.create({
-  // container: {
-  //   flex: 1,
-  //   backgroundColor: "#fff",
-  //   alignItems: "center",
-  //   justifyContent: "center",
-  // },
-  text: {
-    fontSize: 28,
+  container: {
+    flex: 1,
+    backgroundColor: "#6495ED",
+  },
+  city: {
+    flex: 1.2,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  cityName: {
+    fontSize: 58,
+    fontWeight: 600,
+  },
+  weather: {
+    // backgroundColor: "#4169E1",
+  },
+  day: {
+    alignItems: "center",
+    width: SCREEN_WIDTH,
+  },
+  temp: {
+    fontSize: 178,
+    marginTop: 50,
+  },
+  desc: {
+    marginTop: -20,
+    fontSize: 60,
   },
 });
